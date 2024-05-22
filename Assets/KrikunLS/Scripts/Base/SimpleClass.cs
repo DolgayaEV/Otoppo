@@ -1,5 +1,8 @@
-public class SimpleClass
+namespace KrikunLS
 {
+    public class SimpleClass
+    {
 
-   
+
+    }
 }

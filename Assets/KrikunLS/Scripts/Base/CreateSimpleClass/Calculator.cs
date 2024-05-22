@@ -1,30 +1,32 @@
 ﻿using UnityEngine;
 
-public class Calculator 
+namespace KrikunLS
 {
-    public float GetSumm(float all, float level)
+    public class Calculator
     {
-        return all + level;
-    }  
-   
-   
+        public float GetSumm(float all, float level)
+        {
+            return all + level;
+        }
 
-    public float GetMinus(float all, float level)
-    {
-        return all - level;
+
+
+        public float GetMinus(float all, float level)
+        {
+            return all - level;
+        }
+
+        public float GetSumm(Slagaemie slag)
+        {
+            return slag.All + slag.Level;
+        }
     }
 
-    public float GetSumm(Slagaemie slag)
+    public class Slagaemie
     {
-        return slag.All + slag.Level;
-    }  
+        public float All;
+        public float Level;
+
+
+    }
 }
-
-public class Slagaemie
-{
-    public float All;
-    public float Level;
-
-   
-}
-

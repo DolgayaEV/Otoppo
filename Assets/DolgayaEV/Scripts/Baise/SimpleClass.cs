@@ -1,4 +1,7 @@
-public class SimpleClass
+namespace DolgayaEV
 {
+    public class SimpleClass
+    {
 
+    }
 }

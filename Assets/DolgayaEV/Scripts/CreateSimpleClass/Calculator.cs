@@ -1,4 +1,8 @@
-﻿public class Calculator
+﻿namespace DolgayaEV
+{
+
+
+public class Calculator
 {
     public float GetSum(float all, float level)
     {
@@ -24,5 +28,7 @@ public class Slagaemoe
 
     public float All;
     public float Level;
+
+}
 
 }

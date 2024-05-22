@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DolgayaEV
+{
 public class LogicIf : MonoBehaviour
 {
     public bool KeyRed;
@@ -54,4 +56,6 @@ public class LogicIf : MonoBehaviour
     {
         
     }
+}
+
 }

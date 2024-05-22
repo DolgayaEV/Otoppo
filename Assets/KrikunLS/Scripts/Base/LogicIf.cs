@@ -2,53 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogicIf : MonoBehaviour
+namespace KrikunLS
 {
-    public bool KeyRed;
-    public bool KeyGreen;
-
-   private void Start()
+    public class LogicIf : MonoBehaviour
     {
-        //можно использовать && и || вместе - тогда у & будет приоритет над || как у * перед +
-        And();
-        Or();
-    }
+        public bool KeyRed;
+        public bool KeyGreen;
 
-    private void Or()
-    {
-        if (KeyRed == true)
+       private void Start()
         {
-            Debug.Log("Open!");
-        }
-        else if (KeyGreen == true)
-        {
-            Debug.Log("Open!");
+            //можно использовать && и || вместе - тогда у & будет приоритет над || как у * перед +
+            And();
+            Or();
         }
 
-        if (KeyGreen == true || KeyRed == true)// подразумевыает выполнение хотя бы одного условия - если первое выполнено, то последующие даже не будет проверять || - знак логическая "или" (1+1)
+        private void Or()
         {
-            Debug.Log("Open!");
-        }
-    }
+            if (KeyRed == true)
+            {
+                Debug.Log("Open!");
+            }
+            else if (KeyGreen == true)
+            {
+                Debug.Log("Open!");
+            }
 
-    private void And()
-    {
-        if (KeyRed == true)
-        {
-            if (KeyGreen == true)
+            if (KeyGreen == true || KeyRed == true)// подразумевыает выполнение хотя бы одного условия - если первое выполнено, то последующие даже не будет проверять || - знак логическая "или" (1+1)
             {
                 Debug.Log("Open!");
             }
         }
 
-        if (KeyRed == true && KeyGreen == true) //&& - логическая "и", проверяющая выполнение одновременно несколько условий (1*1)
+        private void And()
         {
-            Debug.Log("Open!");
+            if (KeyRed == true)
+            {
+                if (KeyGreen == true)
+                {
+                    Debug.Log("Open!");
+                }
+            }
+
+            if (KeyRed == true && KeyGreen == true) //&& - логическая "и", проверяющая выполнение одновременно несколько условий (1*1)
+            {
+                Debug.Log("Open!");
+            }
+        }
+
+        private void Update()
+        {
+        
         }
     }
 
-    private void Update()
-    {
-        
-    }
 }

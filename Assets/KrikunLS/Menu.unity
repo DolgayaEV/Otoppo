@@ -479,9 +479,10 @@ GameObject:
   - component: {fileID: 789177442}
   - component: {fileID: 789177441}
   - component: {fileID: 789177440}
+  - component: {fileID: 789177443}
   - component: {fileID: 789177439}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +572,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789177441}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 789177443}
+        m_TargetAssemblyTypeName: KrikunLS.ExitGame, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &789177441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +623,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789177437}
   m_CullTransparentMesh: 1
+--- !u!114 &789177443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789177437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f3ae0c02ffebc418ad9ccdb5ce0017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &855782777
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,8 +648,9 @@ GameObject:
   - component: {fileID: 855782780}
   - component: {fileID: 855782779}
   - component: {fileID: 855782782}
+  - component: {fileID: 855782783}
   m_Layer: 5
-  m_Name: Save
+  m_Name: AutorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,7 +719,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 855782780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 855782783}
+        m_TargetAssemblyTypeName: KrikunLS.NextLevel, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &855782780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,6 +791,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &855782783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855782777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e76e383e00eb1b43bd49c7f40b88197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: Autors
 --- !u!1 &1005512342
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +816,7 @@ GameObject:
   - component: {fileID: 1005512345}
   - component: {fileID: 1005512344}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: TitlePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1067,7 +1118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
+  m_text: "\u0410\u0432\u0442\u043E\u0440\u044B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa18326fa735b1d428b0c3c4bbfcfec0, type: 2}
   m_sharedMaterial: {fileID: -7719250645325673646, guid: aa18326fa735b1d428b0c3c4bbfcfec0, type: 2}
@@ -1094,7 +1145,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.4
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1156,9 +1207,10 @@ GameObject:
   - component: {fileID: 1449660206}
   - component: {fileID: 1449660205}
   - component: {fileID: 1449660204}
+  - component: {fileID: 1449660208}
   - component: {fileID: 1449660207}
   m_Layer: 5
-  m_Name: Start
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1227,7 +1279,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1449660205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1449660208}
+        m_TargetAssemblyTypeName: KrikunLS.NextLevel, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1449660205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,6 +1351,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1449660208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449660202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e76e383e00eb1b43bd49c7f40b88197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: Krikun
 --- !u!1 &1581922850
 GameObject:
   m_ObjectHideFlags: 0

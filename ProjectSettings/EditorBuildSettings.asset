@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DolgayaEV/MenuDolgayaEV.unity
-    guid: 9f940e16838a5af4bbfe195789fa9e7b
+    path: Assets/KrikunLS/Menu.unity
+    guid: 184fde1bc0f13ee4b89cbed3084d3241
   - enabled: 1
-    path: Assets/DolgayaEV/DolgayaEV.unity
-    guid: f16a6b4a247917c49aecb1d96288ba8f
+    path: Assets/KrikunLS/Krikun.unity
+    guid: 3d82863938603c949bf91f4ddcd0a1c1
+  - enabled: 1
+    path: Assets/KrikunLS/Autors.unity
+    guid: e1af393447d80954a802fe176379159b
   m_configObjects: {}

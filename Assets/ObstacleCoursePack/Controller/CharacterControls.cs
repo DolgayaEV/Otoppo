@@ -19,7 +19,8 @@ public class CharacterControls : MonoBehaviour {
 
 	private float distToGround;
 
-	private bool canMove = true; //If player is not hitted
+	private bool IsNoPushed = true; //If player is not hitted
+	private bool IsDialog = false;
 	private bool isStuned = false;
 	private bool wasStuned = false; //If player was stunned before get stunned another time
 	private float pushForce;
@@ -47,7 +48,7 @@ public class CharacterControls : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		if (canMove)
+		if (IsNoPushed == true && IsDialog == false)
 		{
 			if (moveDir.x != 0 || moveDir.z != 0)
 			{
@@ -114,12 +115,17 @@ public class CharacterControls : MonoBehaviour {
 				}
 			}
 		}
-		else
+		else if(IsNoPushed == false) 
 		{
 			rb.velocity = pushDir * pushForce;
 		}
-		// We apply gravity manually for more tuning control
-		rb.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
+        else if (IsDialog)
+		{
+			rb.velocity = Vector3.zero;
+		}
+       
+        // We apply gravity manually for more tuning control
+        rb.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
 	}
 
 	private void Update()
@@ -170,7 +176,7 @@ public class CharacterControls : MonoBehaviour {
 		if (isStuned)
 			wasStuned = true;
 		isStuned = true;
-		canMove = false;
+		IsNoPushed = false;
 
 		float delta = 0;
 		delta = value / duration;
@@ -194,7 +200,17 @@ public class CharacterControls : MonoBehaviour {
 		else
 		{
 			isStuned = false;
-			canMove = true;
+			IsNoPushed = true;
 		}
+	}
+
+	public void DialogActivate()
+	{
+		IsDialog = true;
+	}
+
+	public void DialogDeactivade()
+	{
+		IsDialog = false;
 	}
 }

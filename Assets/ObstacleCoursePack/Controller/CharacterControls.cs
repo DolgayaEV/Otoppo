@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent (typeof (Rigidbody))]
+[RequireComponent (typeof (CapsuleCollider))]
 
 public class CharacterControls : MonoBehaviour {
-
+	
 	public float speed = 10.0f;
 	public float airVelocity = 8f;
 	public float gravity = 10.0f;
@@ -19,8 +19,8 @@ public class CharacterControls : MonoBehaviour {
 
 	private float distToGround;
 
-	private bool isNotPushed = true; //If player is not hitted
-	private bool isDialog; //If player is not hitted
+	private bool IsNoPushed = true; //If player is not hitted
+	private bool IsDialog = false;
 	private bool isStuned = false;
 	private bool wasStuned = false; //If player was stunned before get stunned another time
 	private float pushForce;
@@ -29,16 +29,16 @@ public class CharacterControls : MonoBehaviour {
 	public Vector3 checkPoint;
 	private bool slide = false;
 
-	void Start() {
+	void  Start (){
 		// get the distance to ground
 		distToGround = GetComponent<Collider>().bounds.extents.y;
 	}
-
-	bool IsGrounded() {
+	
+	bool IsGrounded (){
 		return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
 	}
-
-	void Awake() {
+	
+	void Awake () {
 		rb = GetComponent<Rigidbody>();
 		rb.freezeRotation = true;
 		rb.useGravity = false;
@@ -46,9 +46,9 @@ public class CharacterControls : MonoBehaviour {
 		checkPoint = transform.position;
 		Cursor.visible = false;
 	}
-
-	void FixedUpdate() {
-		if (isNotPushed == true && isDialog == false)
+	
+	void FixedUpdate () {
+		if (IsNoPushed == true && IsDialog == false)
 		{
 			if (moveDir.x != 0 || moveDir.z != 0)
 			{
@@ -115,16 +115,17 @@ public class CharacterControls : MonoBehaviour {
 				}
 			}
 		}
-		else if(isNotPushed == false)
+		else if(IsNoPushed == false) 
 		{
 			rb.velocity = pushDir * pushForce;
 		}
-		else if (isDialog)
+        else if (IsDialog)
 		{
 			rb.velocity = Vector3.zero;
 		}
-		// We apply gravity manually for more tuning control
-		rb.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
+       
+        // We apply gravity manually for more tuning control
+        rb.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
 	}
 
 	private void Update()
@@ -175,7 +176,7 @@ public class CharacterControls : MonoBehaviour {
 		if (isStuned)
 			wasStuned = true;
 		isStuned = true;
-		isNotPushed = false;
+		IsNoPushed = false;
 
 		float delta = 0;
 		delta = value / duration;
@@ -199,35 +200,26 @@ public class CharacterControls : MonoBehaviour {
 		else
 		{
 			isStuned = false;
-			isNotPushed = true;
+			IsNoPushed = true;
 		}
 	}
 
 	public void DialogActivate()
 	{
-		isDialog = true;
-        Debug.Log("DialogActivate");
+		IsDialog = true;
+	}
 
-    }
-
-    public void DialogDeactivate()
+	public void DialogDeactivade()
 	{
-		isDialog = false;
-        Debug.Log("DialogDeactivate");
+		IsDialog = false;
+	}
+	public void StopPlayerInput()
+	{
+		IsDialog = true;
+	}
 
-    }
-
-    public void StopPlayerInput()
-    {
-        isDialog = true;
-		Debug.Log("Stop");
-    }
-
-    public void GoPlayerInput()
-    {
-        isDialog = false;
-        Debug.Log("Go");
-
-    }
+	public void GoPlayerInpute()
+	{
+		IsDialog = false;
+	}
 }
-	

@@ -209,7 +209,7 @@ public class CharacterControls : MonoBehaviour {
 		IsDialog = true;
 	}
 
-	public void DialogDeactivade()
+	public void DialogDeactivate()
 	{
 		IsDialog = false;
 	}

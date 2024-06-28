@@ -25,7 +25,7 @@ namespace KrikunLS
         {
             if (isInputBack)
             {
-                CharacterControls.DialogDeactivade();
+                CharacterControls.DialogDeactivate();
             }
             Dialog.SetActive(false);
         }

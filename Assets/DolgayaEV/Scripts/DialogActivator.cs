@@ -7,7 +7,8 @@ namespace DolgayaEV
     public class DialogActivator : MonoBehaviour
     {
         public GameObject Dialog;
-        public CharacterControls CharacterControls;
+
+        private CharacterControls CharacterControls;
 
         private void Awake()
         {
@@ -17,8 +18,19 @@ namespace DolgayaEV
 
         public void Activate()
         {
-            CharacterControls.DialogActivate();
-            Dialog.SetActive(true);
+            CharacterControls.DialogActivate(); //сообщаем классу управлению движени персонажа CharacterControls,
+            //о тьом что запускаеться диалоговое окно. Остановить управление персонажа
+            Dialog.SetActive(true); //активируем геймобьекта Канваса Диалогов.
+        }
+
+        public void Deactivate(bool isInputBack)
+        {
+            if (isInputBack)
+            {
+                CharacterControls.DialogDeactivade();
+            }
+            
+            Dialog.SetActive(false);            
         }
     }
 }

@@ -11,8 +11,8 @@ public class PlayerTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //teleport.Apply(other.transform);
-            OnEnter.Invoke();
+            //teleport.Apply(other.transform); 
+            OnEnter.Invoke();// с помощью этого метода мы показываем когда именно вызвать 
         }
 
         string gestName = other.gameObject.name;

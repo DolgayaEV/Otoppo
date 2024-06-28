@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace KrikunLS
+namespace TSentler
 {
     public class DialogActivator : MonoBehaviour
     {
@@ -18,14 +18,15 @@ namespace KrikunLS
 
         public void Activate()
         {
-            CharacterControls.DialogActivate(); // сообщаем классу управления движением персонажа о том, что открывается диалоговое окно и ему необходимо отключить управление персонажем
-            Dialog.SetActive(true); // активация геймобъекта (панель диалогов) - включает галочку   
+            CharacterControls.DialogActivate(); //Сообщаем классу управления движением перса, о том что открывается диалоговое окно и он должен отрубить управление игроком.
+            Dialog.SetActive(true); //Активация геймобъекта с канвасом диалогов
         }
+
         public void Deactivate(bool isInputBack)
         {
             if (isInputBack)
             {
-                CharacterControls.DialogDeactivade();
+                CharacterControls.DialogDeactivate();
             }
             Dialog.SetActive(false);
         }

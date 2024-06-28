@@ -213,4 +213,13 @@ public class CharacterControls : MonoBehaviour {
 	{
 		IsDialog = false;
 	}
+	public void StopPlayerInput()
+	{
+		IsDialog = true;
+	}
+
+	public void GoPlayerInpute()
+	{
+		IsDialog = false;
+	}
 }

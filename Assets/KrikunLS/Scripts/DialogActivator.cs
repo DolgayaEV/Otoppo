@@ -7,7 +7,8 @@ namespace KrikunLS
     public class DialogActivator : MonoBehaviour
     {
         public GameObject Dialog;
-        public CharacterControls CharacterControls;
+
+        private CharacterControls CharacterControls;
 
         private void Awake()
         {
@@ -17,8 +18,16 @@ namespace KrikunLS
 
         public void Activate()
         {
-            CharacterControls.DialogActivate();
-            Dialog.SetActive(true);
+            CharacterControls.DialogActivate(); // сообщаем классу управления движением персонажа о том, что открывается диалоговое окно и ему необходимо отключить управление персонажем
+            Dialog.SetActive(true); // активация геймобъекта (панель диалогов) - включает галочку   
+        }
+        public void Deactivate(bool isInputBack)
+        {
+            if (isInputBack)
+            {
+                CharacterControls.DialogDeactivade();
+            }
+            Dialog.SetActive(false);
         }
     }
 }

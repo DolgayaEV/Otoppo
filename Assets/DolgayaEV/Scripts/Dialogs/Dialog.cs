@@ -9,11 +9,13 @@ namespace DolgayaEV.Dialogs
     public class Dialog : MonoBehaviour
     {
         public bool _isInputBack = true;
+        public UnityEvent OnStarted;
         public UnityEvent OnEnded;
-
+            
         private Fraza _fraza; // это ссылка на компонент текущшей фразы. (область памяти с информацией)
         private DialogActivator _dialogActivator; // сыылка на идиалог активатор 
         private DialogViey _dialogviey;
+        private Camera _currentCamera;
         private bool _isCurrent;
 
         private void Awake() // поиск компонентов /прокидывание компонентов 
@@ -26,8 +28,10 @@ namespace DolgayaEV.Dialogs
 
         public void StartDialog() // начало диалога
         {
-            _isCurrent = true;
-            Skazaty();
+            _isCurrent = true; // данный диалог функционирует
+            _dialogActivator.Activate(); // отсылаеться к диалог активатору, на конве показывавет панель 
+            Skazaty(); // перелистывание фразы, отображает в юзер интерфейс
+            OnStarted.Invoke();
         }
 
         public void NextFraza() //следующая фраза 
@@ -42,13 +46,33 @@ namespace DolgayaEV.Dialogs
             if (_fraza != null)
             {
                 _dialogviey.SetFraza(_fraza);
+                CameraActivate();
                 _fraza = _fraza.NextFraza;
             }
             else
             {
                 _isCurrent = false;
                 _dialogActivator.Deactivate(_isInputBack);
+                CameraDiactivate();
                 OnEnded.Invoke();
+            }
+        }
+
+        private void CameraActivate()
+        {
+            if (_fraza.Camera == null)
+                return;
+            
+            CameraDiactivate();
+            _currentCamera = _fraza.Camera;
+            _currentCamera.gameObject.SetActive(true);
+        }
+
+        private void CameraDiactivate()
+        {
+            if (_currentCamera != null)
+            {
+                _currentCamera.gameObject.SetActive(false);
             }
         }
 

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KrikunLS/Autors.unity
     guid: e1af393447d80954a802fe176379159b
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/Prolog.unity
+    guid: 5ebd5b38b1948654cb220602e09d699a
   m_configObjects: {}

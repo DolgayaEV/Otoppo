@@ -8,6 +8,7 @@ namespace KrikunLS.Dialogs
     {
         public string Name;
         public string Message;
+        public Camera Camera;
         public Fraza NextFraza;
     }
 }

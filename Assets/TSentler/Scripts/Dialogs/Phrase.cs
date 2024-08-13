@@ -8,6 +8,7 @@ namespace TSentler.Dialogs
     {
         public string Name;
         public string Message;
+        public Camera Camera;
         public Phrase NextPhrase;
 
     }

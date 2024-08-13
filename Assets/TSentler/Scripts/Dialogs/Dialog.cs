@@ -8,11 +8,13 @@ namespace TSentler.Dialogs
     public class Dialog : MonoBehaviour
     {
         public bool _isInputBack = true;
+        public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
         private Phrase _phrase; //ссылка на компонент текущей фразы
         private DialogActivator _dialogActivator;
         private DialogView _dialogView;
+        private Camera _currentCamera;
         private bool _isCurrent;
 
         private void Awake()
@@ -25,7 +27,9 @@ namespace TSentler.Dialogs
         public void StartDialog()
         {
             _isCurrent = true;
+            _dialogActivator.Activate();
             Say();
+            OnStarted.Invoke();
         }
 
         public void NextPhrase()
@@ -41,13 +45,33 @@ namespace TSentler.Dialogs
             if (_phrase != null)
             {
                 _dialogView.SetPhrase(_phrase);
+                CameraActivate();
                 _phrase = _phrase.NextPhrase;
             }
             else
             {
                 _isCurrent = false;
                 _dialogActivator.Deactivate(_isInputBack);
+                CameraDeactivate();
                 OnEnded.Invoke();
+            }
+        }
+
+        private void CameraActivate()
+        {
+            if (_phrase.Camera == null)
+                return;
+
+            CameraDeactivate();
+            _currentCamera = _phrase.Camera;
+            _currentCamera.gameObject.SetActive(true);
+        }
+
+        private void CameraDeactivate()
+        {
+            if (_currentCamera != null)
+            {
+                _currentCamera.gameObject.SetActive(false);
             }
         }
 

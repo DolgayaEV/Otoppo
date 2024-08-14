@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,5 +12,9 @@ namespace TSentler.Dialogs
         public Camera Camera;
         public Phrase NextPhrase;
 
+        public virtual Phrase GetNextPhrase()
+        {
+            return NextPhrase;
+        }
     }
 }

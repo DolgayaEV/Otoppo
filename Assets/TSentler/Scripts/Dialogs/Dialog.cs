@@ -11,7 +11,8 @@ namespace TSentler.Dialogs
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
-        private Phrase _phrase; //ссылка на компонент текущей фразы
+        private Phrase _currentPhrase; //ссылка на компонент текущей фразы
+        private Phrase _firstPhrase;
         private DialogActivator _dialogActivator;
         private DialogView _dialogView;
         private Camera _currentCamera;
@@ -19,7 +20,7 @@ namespace TSentler.Dialogs
 
         private void Awake()
         {
-            _phrase = GetComponent<Phrase>(); //с помощью метода GetComponent находим первый рядом лежащий компонент 
+            _firstPhrase = GetComponent<Phrase>(); //с помощью метода GetComponent находим первый рядом лежащий компонент 
             _dialogView = FindObjectOfType<DialogView>(); //ищем компонент DialogView который гдето на сцене(на одном из гейм объектв).
             _dialogActivator = FindObjectOfType<DialogActivator>(); //изначально любая ссылка например _dialogActivator пустая как если бы ей был присвоен null _dialogActivator = null
         }
@@ -28,6 +29,7 @@ namespace TSentler.Dialogs
         {
             _isCurrent = true;
             _dialogActivator.Activate();
+            _currentPhrase = _firstPhrase;
             Say();
             OnStarted.Invoke();
         }
@@ -37,16 +39,16 @@ namespace TSentler.Dialogs
             if (_isCurrent == false)
                 return;
 
+            _currentPhrase = _currentPhrase.GetNextPhrase();
             Say();
         }
 
         private void Say()
         {
-            if (_phrase != null)
+            if (_currentPhrase != null)
             {
-                _dialogView.SetPhrase(_phrase);
+                _dialogView.SetPhrase(_currentPhrase);
                 CameraActivate();
-                _phrase = _phrase.NextPhrase;
             }
             else
             {
@@ -59,11 +61,11 @@ namespace TSentler.Dialogs
 
         private void CameraActivate()
         {
-            if (_phrase.Camera == null)
+            if (_currentPhrase.Camera == null)
                 return;
 
             CameraDeactivate();
-            _currentCamera = _phrase.Camera;
+            _currentCamera = _currentPhrase.Camera;
             _currentCamera.gameObject.SetActive(true);
         }
 

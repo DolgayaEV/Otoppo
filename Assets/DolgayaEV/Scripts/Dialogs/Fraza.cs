@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ namespace DolgayaEV.Dialogs
         public string Message;
         public Camera Camera;
         public Fraza NextFraza;
-    
+
+        public virtual Fraza GetNextFraza()
+        {
+            return NextFraza;
+        } 
+        
     }
 }

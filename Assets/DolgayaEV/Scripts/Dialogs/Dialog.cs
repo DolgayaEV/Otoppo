@@ -45,9 +45,9 @@ namespace DolgayaEV.Dialogs
         {
             if (_fraza != null)
             {
+                _fraza = _fraza.GetNextFraza();
                 _dialogviey.SetFraza(_fraza);
                 CameraActivate();
-                _fraza = _fraza.NextFraza;
             }
             else
             {

@@ -40,15 +40,13 @@ namespace KrikunLS.Dialogs
                 return;
             Say();
         }
-
         private void Say()
         {
             if (_fraza != null)
             {
+                _fraza = _fraza.GetNextFraza();
                 _dialogView.SetFraza(_fraza);
                 CameraActivate();
-                _fraza = _fraza.NextFraza;
-
             }
             else
             {
@@ -56,7 +54,6 @@ namespace KrikunLS.Dialogs
                 _dialogActivator.Deactivate(_isInputBack);
                 CameraDeactivate(); 
                 OnEnded.Invoke();
-
             }
         }
 

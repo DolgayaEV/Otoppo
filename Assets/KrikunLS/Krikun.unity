@@ -1056,6 +1056,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1915541819}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &818546008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818546009}
+  - component: {fileID: 818546010}
+  m_Layer: 0
+  m_Name: Dialog_A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818546009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818546008}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99071774244077539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &818546010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818546008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ade0c7c8b37f14893c1297b477f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
+  Message: "\u041E\u043A\u0435\u0439"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 0}
 --- !u!1001 &843380979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2074,6 +2122,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
+--- !u!1 &1410989867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410989868}
+  - component: {fileID: 1410989869}
+  m_Layer: 0
+  m_Name: Dialog_B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410989868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410989867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99071774244077539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1410989869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410989867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ade0c7c8b37f14893c1297b477f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
+  Message: "\u044D\u043C\u043C\u043C\u043C"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 0}
 --- !u!1 &1474559509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,6 +3087,7 @@ MonoBehaviour:
   Name: "\u041C\u0430\u0441\u0442\u0435\u0440"
   Message: "\u041F\u043E\u0439\u0434\u0435\u043C, \u043A\u0443\u0434\u0430 \u0436
     \u0434\u0435\u0432\u0430\u0442\u044C\u0441\u044F!"
+  Camera: {fileID: 0}
   NextFraza: {fileID: 0}
 --- !u!114 &2038422669
 MonoBehaviour:
@@ -3007,6 +3104,7 @@ MonoBehaviour:
   Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
   Message: "\u041C\u043E\u0436\u0435\u0448\u044C \u043C\u043D\u0435 \u043F\u043E\u043C\u043E\u0447\u044C
     \u0441\u043E \u0441\u0442\u0440\u043E\u043F\u0430\u043C\u0438?"
+  Camera: {fileID: 0}
   NextFraza: {fileID: 2038422668}
 --- !u!114 &2038422670
 MonoBehaviour:
@@ -3021,6 +3119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isInputBack: 1
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnded:
     m_PersistentCalls:
       m_Calls:
@@ -4533,7 +4634,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 818546009}
+  - {fileID: 1410989868}
   m_Father: {fileID: 9112426427906762852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &255069993280093590
@@ -5840,6 +5943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
   Message: "\u0414\u0430, \u0434\u0430\u0432\u043D\u043E!"
+  Camera: {fileID: 0}
   NextFraza: {fileID: 5571977322676756428}
 --- !u!4 &1549754842129942826
 Transform:
@@ -5951,9 +6055,7 @@ GameObject:
   - component: {fileID: 3679007103336980022}
   - component: {fileID: 1251348423739216656}
   - component: {fileID: 5571977322676756428}
-  - component: {fileID: 7563727347678584779}
-  - component: {fileID: 8816216268839922976}
-  - component: {fileID: 4871153115912688680}
+  - component: {fileID: 5571977322676756429}
   m_Layer: 0
   m_Name: Dialog1
   m_TagString: Untagged
@@ -6378,6 +6480,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isInputBack: 1
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnded:
     m_PersistentCalls:
       m_Calls:
@@ -6407,6 +6512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u0414\u0438\u0440\u0435\u043A\u0442\u043E\u0440"
   Message: "\u0422\u044B \u0437\u0430\u043A\u0440\u0435\u043F\u0438\u043B \u0441\u0442\u0440\u043E\u043F\u044B?"
+  Camera: {fileID: 0}
   NextFraza: {fileID: 1251348423739216656}
 --- !u!23 &3708343089900862695
 MeshRenderer:
@@ -6926,22 +7032,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1285414142589091175, guid: e62f181b498b7b24a939ed4e3d4221ad, type: 3}
   m_PrefabInstance: {fileID: 4798469301771522749}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4871153115912688680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880155950401297352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ade0c7c8b37f14893c1297b477f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
-  Message: "\u0410 \u043C\u043D\u0435 \u043D\u0438\u043A\u0442\u043E \u043D\u0435
-    \u043E\u0431\u044A\u044F\u0441\u043D\u044F\u043B \u043A\u0430\u043A \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E!"
-  NextFraza: {fileID: 0}
 --- !u!95 &5016406758031217986
 Animator:
   serializedVersion: 5
@@ -6978,7 +7068,28 @@ MonoBehaviour:
   Name: "\u041C\u0430\u0441\u0442\u0435\u0440"
   Message: "\u0422\u0430\u043A \u0442\u0430\u043C \u0432\u0441\u0451 \u0431\u043E\u043B\u0442\u0430\u0435\u0442\u0441\u044F
     \u043D\u0430 \u0441\u043E\u043F\u043B\u044F\u0445!!!"
-  NextFraza: {fileID: 7563727347678584779}
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 5571977322676756429}
+--- !u!114 &5571977322676756429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880155950401297352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fadb9c0c7f5b64e8ffa284d0e0b777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
+  Message: 
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 818546010}
+  FrazaB: {fileID: 1410989869}
+  A: "\u0421\u0435\u0439\u0447\u0430\u0441 \u0438\u0441\u043F\u0440\u0430\u0432\u043B\u044E"
+  B: "\u0414\u0430 \u043D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u043E \u0438
+    \u0442\u0430\u043A"
 --- !u!81 &5760981180748184757
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7475,21 +7586,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7397137975640516148, guid: 474c64e7b6302304bb04e77a9e8809dc, type: 3}
   m_PrefabInstance: {fileID: 7397137975527181408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7563727347678584779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880155950401297352}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ade0c7c8b37f14893c1297b477f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: "\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A"
-  Message: "\u041D\u0443 \u043A\u0430\u043A \u0441\u043C\u043E\u0433..."
-  NextFraza: {fileID: 8816216268839922976}
 --- !u!114 &7870902054845505863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7691,21 +7787,6 @@ MonoBehaviour:
             m_StringArgument: ToVzmah
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &8816216268839922976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880155950401297352}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ade0c7c8b37f14893c1297b477f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: "\u0414\u0438\u0440\u0435\u043A\u0442\u043E\u0440"
-  Message: "\u0410 \u043D\u0430\u0434\u043E - \u043A\u0430\u043A \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E!"
-  NextFraza: {fileID: 4871153115912688680}
 --- !u!4 &8851496624191095468
 Transform:
   m_ObjectHideFlags: 0

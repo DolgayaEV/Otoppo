@@ -9,6 +9,9 @@ namespace TSentler.Dialogs
     {
         public TMP_Text NameText;
         public TMP_Text MessageText;
+        public GameObject ForkPanel;
+        public TMP_Text ForkTextA;
+        public TMP_Text ForkTextB;
 
         private void Awake()
         {
@@ -20,6 +23,18 @@ namespace TSentler.Dialogs
         {
             NameText.text = phrase.Name;
             MessageText.text = phrase.Message;
+            ForkPanel.SetActive(false);
+            if (phrase is PhraseFork)
+            {
+                SetPhrase(phrase as PhraseFork);
+            }
+        }
+
+        private void SetPhrase(PhraseFork phrase)
+        {
+            ForkTextA.text = phrase.ButtonAText;
+            ForkTextB.text = phrase.ButtonBText;
+            ForkPanel.SetActive(true);
         }
     }
 }

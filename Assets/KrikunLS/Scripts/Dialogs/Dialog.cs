@@ -10,13 +10,16 @@ namespace KrikunLS.Dialogs
 {
     public class Dialog : MonoBehaviour
     {
-        public bool _isInputBack = true;
+        public bool AutoStart;
+        public bool IsInputBack = true;
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
         private Fraza _currentFraza;// это ссылка на компонент текущей фразы (на область памяти, где находится информация)
         private Fraza _firstFraza;
         private DialogView _dialogView;
+        private DialogButtons _dialogButtons;
+        private BackgroubdSwitcher _backgroundSwitcher;
         private DialogActivator _dialogActivator;
         private Camera _currentCamera;
         private bool _isCurrent;
@@ -25,12 +28,27 @@ namespace KrikunLS.Dialogs
         {
             _firstFraza = GetComponent<Fraza>(); // с помощью метода GetComponent первый находим рядом длежащий компонент фраза
             _dialogView = FindObjectOfType<DialogView>(); // с помощью метода FindObjectOfType находим объект конкретного типа (указываем какой именно), который лежит не рядом, а на другом геймобъекте где-то на сцене
+            _dialogButtons = FindObjectOfType<DialogButtons>(); 
             _dialogActivator = FindObjectOfType<DialogActivator>(); // изначально любая ссылка, нгапример пустая DialogActivator (равна нулю), как если бы DialogActivator = null
+            _backgroundSwitcher = FindObjectOfType<BackgroubdSwitcher>();
         }
+
+
+
+        private void Start()
+        {
+            if (AutoStart)
+            {
+                StartDialog();
+            }
+        }
+        public Fraza GetCurrentFraza () => _currentFraza;
+        public FrazaRazvilka GetCurrentFrazaRazvilka () => _currentFraza as FrazaRazvilka;
 
         public void StartDialog()
         {
             _isCurrent = true;
+            _dialogButtons.SetDialog(this);
             _dialogActivator.Activate();
             _currentFraza = _firstFraza;
             Say();
@@ -49,12 +67,14 @@ namespace KrikunLS.Dialogs
             {
                 _dialogView.SetFraza(_currentFraza);
                 CameraActivate();
+                _backgroundSwitcher.ActivateByIndex(_currentFraza.BackgroundIndex);
             }
             else
             {
                 _isCurrent = false;
-                _dialogActivator.Deactivate(_isInputBack);
+                _dialogActivator.Deactivate(IsInputBack);
                 CameraDeactivate(); 
+                _backgroundSwitcher.DeactivateAll();
                 OnEnded.Invoke();
             }
         }
@@ -77,12 +97,6 @@ namespace KrikunLS.Dialogs
             }
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                NextFraza();
-            }
-        }
+        
     }
 }

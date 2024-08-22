@@ -26,5 +26,15 @@ namespace KrikunLS.Dialogs
                 return FrazaB;
             }
         }
+
+        public void SetRazvilkaA()
+        {
+            _Vybor = 1;
+        }
+
+        public void SetRazvilkaB()
+        {
+            _Vybor = 2;
+        }
     }
 }

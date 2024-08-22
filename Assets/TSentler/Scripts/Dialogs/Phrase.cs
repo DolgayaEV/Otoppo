@@ -11,6 +11,7 @@ namespace TSentler.Dialogs
         public string Message;
         public Camera Camera;
         public Phrase NextPhrase;
+        public int BackgroundIndex = -1;
 
         public virtual Phrase GetNextPhrase()
         {

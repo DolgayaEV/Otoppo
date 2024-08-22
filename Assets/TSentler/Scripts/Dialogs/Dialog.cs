@@ -7,7 +7,8 @@ namespace TSentler.Dialogs
 {
     public class Dialog : MonoBehaviour
     {
-        public bool _isInputBack = true;
+        public bool AutoStart;
+        public bool IsInputBack = true;
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
@@ -15,6 +16,8 @@ namespace TSentler.Dialogs
         private Phrase _firstPhrase;
         private DialogActivator _dialogActivator;
         private DialogView _dialogView;
+        private DialogButtons _dialogButtons;
+        private BackgroundSwitcher _backgroundSwitcher;
         private Camera _currentCamera;
         private bool _isCurrent;
 
@@ -22,12 +25,26 @@ namespace TSentler.Dialogs
         {
             _firstPhrase = GetComponent<Phrase>(); //с помощью метода GetComponent находим первый рядом лежащий компонент 
             _dialogView = FindObjectOfType<DialogView>(); //ищем компонент DialogView который гдето на сцене(на одном из гейм объектв).
+            _dialogButtons = FindObjectOfType<DialogButtons>(); //ищем компонент DialogButtons который гдето на сцене(на одном из гейм объектв).
             _dialogActivator = FindObjectOfType<DialogActivator>(); //изначально любая ссылка например _dialogActivator пустая как если бы ей был присвоен null _dialogActivator = null
+            _backgroundSwitcher = FindObjectOfType<BackgroundSwitcher>();
         }
+
+        private void Start()
+        {
+            if (AutoStart)
+            {
+                StartDialog();
+            }
+        }
+
+        public Phrase GetCurrentPhrase() => _currentPhrase;
+        public PhraseFork GetCurrentPhraseFork() => _currentPhrase as PhraseFork;
 
         public void StartDialog()
         {
             _isCurrent = true;
+            _dialogButtons.SetDialog(this);
             _dialogActivator.Activate();
             _currentPhrase = _firstPhrase;
             Say();
@@ -49,12 +66,14 @@ namespace TSentler.Dialogs
             {
                 _dialogView.SetPhrase(_currentPhrase);
                 CameraActivate();
+                _backgroundSwitcher.ActivateByIndex(_currentPhrase.BackgroundIndex);
             }
             else
             {
                 _isCurrent = false;
-                _dialogActivator.Deactivate(_isInputBack);
+                _dialogActivator.Deactivate(IsInputBack);
                 CameraDeactivate();
+                _backgroundSwitcher.DeactivateAll();
                 OnEnded.Invoke();
             }
         }
@@ -77,12 +96,6 @@ namespace TSentler.Dialogs
             }
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                NextPhrase();
-            }
-        }
+        
     }
 }

@@ -26,8 +26,15 @@ namespace DolgayaEV.Dialogs
             {
                 return FrazaB;
             }
+        }
+        public void SetRazvilkaA()
+        {
+            _vybor = 1;
+        }
 
-
+        public void SetRazvilkaB()
+        {
+            _vybor = 2;
         }
     }
 }

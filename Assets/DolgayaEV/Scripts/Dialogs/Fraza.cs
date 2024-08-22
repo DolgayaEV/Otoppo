@@ -12,6 +12,7 @@ namespace DolgayaEV.Dialogs
         public string Message;
         public Camera Camera;
         public Fraza NextFraza;
+        public int BackgroundIndex = -1;
 
         public virtual Fraza GetNextFraza()
         {

@@ -31,5 +31,14 @@ namespace TSentler.Dialogs
             
         }
 
+        public void SetForkA()
+        {
+            _fork = 1;
+        }
+
+        public void SetForkB()
+        {
+            _fork = 2;
+        }
     }
 }

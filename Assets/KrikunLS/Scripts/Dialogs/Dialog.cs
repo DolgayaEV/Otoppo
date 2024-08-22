@@ -14,7 +14,8 @@ namespace KrikunLS.Dialogs
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
-        private Fraza _fraza;// это ссылка на компонент текущей фразы (на область памяти, где находится информация)
+        private Fraza _currentFraza;// это ссылка на компонент текущей фразы (на область памяти, где находится информация)
+        private Fraza _firstFraza;
         private DialogView _dialogView;
         private DialogActivator _dialogActivator;
         private Camera _currentCamera;
@@ -22,7 +23,7 @@ namespace KrikunLS.Dialogs
        
         private void Awake() //прокидывает ссылки на компоненты - техническая сторонра вопроса
         {
-            _fraza = GetComponent<Fraza>(); // с помощью метода GetComponent первый находим рядом длежащий компонент фраза
+            _firstFraza = GetComponent<Fraza>(); // с помощью метода GetComponent первый находим рядом длежащий компонент фраза
             _dialogView = FindObjectOfType<DialogView>(); // с помощью метода FindObjectOfType находим объект конкретного типа (указываем какой именно), который лежит не рядом, а на другом геймобъекте где-то на сцене
             _dialogActivator = FindObjectOfType<DialogActivator>(); // изначально любая ссылка, нгапример пустая DialogActivator (равна нулю), как если бы DialogActivator = null
         }
@@ -31,6 +32,7 @@ namespace KrikunLS.Dialogs
         {
             _isCurrent = true;
             _dialogActivator.Activate();
+            _currentFraza = _firstFraza;
             Say();
             OnStarted.Invoke(); 
         }
@@ -38,14 +40,14 @@ namespace KrikunLS.Dialogs
         {
             if (_isCurrent == false)
                 return;
+            _currentFraza = _currentFraza.GetNextFraza();
             Say();
         }
         private void Say()
         {
-            if (_fraza != null)
+            if (_currentFraza != null)
             {
-                _fraza = _fraza.GetNextFraza();
-                _dialogView.SetFraza(_fraza);
+                _dialogView.SetFraza(_currentFraza);
                 CameraActivate();
             }
             else
@@ -59,11 +61,11 @@ namespace KrikunLS.Dialogs
 
         private void CameraActivate()
         {
-            if (_fraza.Camera == null)
+            if (_currentFraza.Camera == null)
                 return;
 
             CameraDeactivate();
-            _currentCamera = _fraza.Camera;
+            _currentCamera = _currentFraza.Camera;
             _currentCamera.gameObject.SetActive(true);
         }
 

@@ -12,7 +12,8 @@ namespace DolgayaEV.Dialogs
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
             
-        private Fraza _fraza; // это ссылка на компонент текущшей фразы. (область памяти с информацией)
+        private Fraza _currentFraza; // это ссылка на компонент текущшей фразы. (область памяти с информацией)
+        private Fraza _firstFraza;
         private DialogActivator _dialogActivator; // сыылка на идиалог активатор 
         private DialogViey _dialogviey;
         private Camera _currentCamera;
@@ -20,7 +21,7 @@ namespace DolgayaEV.Dialogs
 
         private void Awake() // поиск компонентов /прокидывание компонентов 
         {
-            _fraza = GetComponent<Fraza>(); // с помощью метода GetComponent находим первый рядом лежащий компонент Fraza
+            _firstFraza = GetComponent<Fraza>(); // с помощью метода GetComponent находим первый рядом лежащий компонент Fraza
             _dialogviey = FindObjectOfType<DialogViey>(); // ищем компонент DialogViey который где-то на сцене на геймобьекте. 
             _dialogActivator = FindObjectOfType<DialogActivator>(); // ищет компонент активатор диалога 
             //изначально любая ссылка например _dialogActivator - пустая, как если бы ей присвоен null, _dialogActivator = null, 
@@ -30,23 +31,25 @@ namespace DolgayaEV.Dialogs
         {
             _isCurrent = true; // данный диалог функционирует
             _dialogActivator.Activate(); // отсылаеться к диалог активатору, на конве показывавет панель 
+            _currentFraza = _firstFraza;
             Skazaty(); // перелистывание фразы, отображает в юзер интерфейс
             OnStarted.Invoke();
         }
 
         public void NextFraza() //следующая фраза 
         {
-            Skazaty();
             if (_isCurrent == false)
                 return;             
+            _currentFraza = _currentFraza.GetNextFraza();
+            Skazaty();
         }
 
         private void Skazaty() // приватный для метода Диалог умеет говорить, показывает фразы 
         {
-            if (_fraza != null)
+
+            if (_currentFraza != null)
             {
-                _fraza = _fraza.GetNextFraza();
-                _dialogviey.SetFraza(_fraza);
+                _dialogviey.SetFraza(_currentFraza);
                 CameraActivate();
             }
             else
@@ -60,11 +63,11 @@ namespace DolgayaEV.Dialogs
 
         private void CameraActivate()
         {
-            if (_fraza.Camera == null)
+            if (_currentFraza.Camera == null)
                 return;
             
             CameraDiactivate();
-            _currentCamera = _fraza.Camera;
+            _currentCamera = _currentFraza.Camera;
             _currentCamera.gameObject.SetActive(true);
         }
 

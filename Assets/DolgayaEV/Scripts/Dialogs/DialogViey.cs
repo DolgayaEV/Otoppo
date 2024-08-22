@@ -10,6 +10,10 @@ namespace DolgayaEV.Dialogs
     {
         public TMP_Text NameText;
         public TMP_Text MessageText;
+        public GameObject RazvilkaPanel;
+        public TMP_Text RazvilkaTextA;
+        public TMP_Text RazvilkaTextB;
+
 
         private void Awake()
         {
@@ -21,6 +25,18 @@ namespace DolgayaEV.Dialogs
         {
             NameText.text = fraza.Name;
             MessageText.text = fraza.Message;
+            RazvilkaPanel.SetActive(false);
+            if (fraza is FrazaRazvilka)
+            {
+                SetFraza(fraza as FrazaRazvilka); 
+            }
+        }  
+        
+        private void SetFraza(FrazaRazvilka fraza)
+        {
+            RazvilkaTextA.text = fraza.ButtonAText;
+            RazvilkaTextB.text = fraza.ButtonBText;
+            RazvilkaPanel.SetActive(true);
         }
     }
 }

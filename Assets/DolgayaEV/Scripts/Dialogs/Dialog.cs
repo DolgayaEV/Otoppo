@@ -8,7 +8,8 @@ namespace DolgayaEV.Dialogs
 
     public class Dialog : MonoBehaviour
     {
-        public bool _isInputBack = true;
+        public bool AutoStart;
+        public bool IsInputBack = true;
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
             
@@ -16,6 +17,8 @@ namespace DolgayaEV.Dialogs
         private Fraza _firstFraza;
         private DialogActivator _dialogActivator; // сыылка на идиалог активатор 
         private DialogViey _dialogviey;
+        private DialogButtons _dialogButtons;
+        private BeckgraunPereklychi _beckgraunPereklychi;
         private Camera _currentCamera;
         private bool _isCurrent;
 
@@ -23,13 +26,30 @@ namespace DolgayaEV.Dialogs
         {
             _firstFraza = GetComponent<Fraza>(); // с помощью метода GetComponent находим первый рядом лежащий компонент Fraza
             _dialogviey = FindObjectOfType<DialogViey>(); // ищем компонент DialogViey который где-то на сцене на геймобьекте. 
+            _dialogButtons = FindObjectOfType<DialogButtons>(); // ищем компонент DialogViey который где-то на сцене на геймобьекте. 
             _dialogActivator = FindObjectOfType<DialogActivator>(); // ищет компонент активатор диалога 
-            //изначально любая ссылка например _dialogActivator - пустая, как если бы ей присвоен null, _dialogActivator = null, 
+            //изначально любая ссылка например _dialogActivator - пустая, как если бы ей присвоен null, _dialogActivator = null,
+            _beckgraunPereklychi = FindObjectOfType<BeckgraunPereklychi>();
         }
+
+        private void Start()
+        {
+            if (AutoStart)
+            {
+                StartDialog();
+            }
+        }
+
+        public Fraza GetCurrentFraza() => _currentFraza; 
+        public FrazaRazvilka GetCurrentFrazaRazvilka() => _currentFraza as FrazaRazvilka; 
+        
+
+        
 
         public void StartDialog() // начало диалога
         {
             _isCurrent = true; // данный диалог функционирует
+            _dialogButtons.SetDialog (this);
             _dialogActivator.Activate(); // отсылаеться к диалог активатору, на конве показывавет панель 
             _currentFraza = _firstFraza;
             Skazaty(); // перелистывание фразы, отображает в юзер интерфейс
@@ -51,12 +71,14 @@ namespace DolgayaEV.Dialogs
             {
                 _dialogviey.SetFraza(_currentFraza);
                 CameraActivate();
+                _beckgraunPereklychi.ActivateByIndex(_currentFraza.BackgroundIndex);
             }
             else
             {
                 _isCurrent = false;
-                _dialogActivator.Deactivate(_isInputBack);
+                _dialogActivator.Deactivate(IsInputBack);
                 CameraDiactivate();
+                _beckgraunPereklychi.DiactivateAll();
                 OnEnded.Invoke();
             }
         }
@@ -79,13 +101,7 @@ namespace DolgayaEV.Dialogs
             }
         }
 
-        private void Update() // отслеживание нажатия кнопки пробел 
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                NextFraza();
-            }
-        }
+       
     }
 
 }

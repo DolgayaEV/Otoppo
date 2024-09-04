@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DolgayaEV.Dialogs
 {
@@ -13,6 +14,7 @@ namespace DolgayaEV.Dialogs
         public Camera Camera;
         public Fraza NextFraza;
         public int BackgroundIndex = -1;
+        public UnityEvent OnStarted;
 
         public virtual Fraza GetNextFraza()
         {

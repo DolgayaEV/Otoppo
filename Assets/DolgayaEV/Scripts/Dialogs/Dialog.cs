@@ -10,6 +10,7 @@ namespace DolgayaEV.Dialogs
     {
         public bool AutoStart;
         public bool IsInputBack = true;
+        public bool IsActiveCameraAtEnd;
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
             
@@ -72,12 +73,17 @@ namespace DolgayaEV.Dialogs
                 _dialogviey.SetFraza(_currentFraza);
                 CameraActivate();
                 _beckgraunPereklychi.ActivateByIndex(_currentFraza.BackgroundIndex);
+                _currentFraza.OnStarted?.Invoke();
+
             }
             else
             {
                 _isCurrent = false;
                 _dialogActivator.Deactivate(IsInputBack);
-                CameraDiactivate();
+                if (IsActiveCameraAtEnd == false)
+                {
+                    CameraDiactivate();
+                }
                 _beckgraunPereklychi.DiactivateAll();
                 OnEnded.Invoke();
             }

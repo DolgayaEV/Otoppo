@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TSentler.Dialogs
 {
@@ -12,6 +13,7 @@ namespace TSentler.Dialogs
         public GameObject ForkPanel;
         public TMP_Text ForkTextA;
         public TMP_Text ForkTextB;
+        public Image ImageHead;
 
         private void Awake()
         {
@@ -23,6 +25,10 @@ namespace TSentler.Dialogs
         {
             NameText.text = phrase.Name;
             MessageText.text = phrase.Message;
+            if (phrase.ImageHead != null)
+            {
+                ImageHead.sprite = phrase.ImageHead;
+            }
             ForkPanel.SetActive(false);
             if (phrase is PhraseFork)
             {

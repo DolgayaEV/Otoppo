@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KrikunLS
 {
@@ -8,24 +9,24 @@ namespace KrikunLS
     {
         public GameObject Dialog;
 
-        private CharacterControls CharacterControls;
+        public UnityEvent Activated;
+        public UnityEvent Deactivated;
 
         private void Awake()
         {
-            CharacterControls = FindObjectOfType<CharacterControls>();
             Dialog.SetActive(false);
         }
 
         public void Activate()
         {
-            CharacterControls.DialogActivate(); // сообщаем классу управления движением персонажа о том, что открывается диалоговое окно и ему необходимо отключить управление персонажем
-            Dialog.SetActive(true); // активация геймобъекта (панель диалогов) - включает галочку   
+            Dialog.SetActive(true); // активация геймобъекта (панель диалогов) - включает галочку
+            Activated.Invoke(); 
         }
-        public void Deactivate(bool isInputBack)
+        public void Deactivate(bool isEventNeed)
         {
-            if (isInputBack)
+            if (isEventNeed)
             {
-                CharacterControls.DialogDeactivate();
+                Deactivated.Invoke();   
             }
             Dialog.SetActive(false);
         }

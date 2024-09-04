@@ -9,6 +9,7 @@ namespace TSentler.Dialogs
     {
         public bool AutoStart;
         public bool IsInputBack = true;
+        public bool IsActiveCameraAtEnd;
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
@@ -67,12 +68,16 @@ namespace TSentler.Dialogs
                 _dialogView.SetPhrase(_currentPhrase);
                 CameraActivate();
                 _backgroundSwitcher.ActivateByIndex(_currentPhrase.BackgroundIndex);
+                _currentPhrase.OnStarted.Invoke();
             }
             else
             {
                 _isCurrent = false;
                 _dialogActivator.Deactivate(IsInputBack);
-                CameraDeactivate();
+                if (IsActiveCameraAtEnd == false)
+                {
+                    CameraDeactivate();
+                }
                 _backgroundSwitcher.DeactivateAll();
                 OnEnded.Invoke();
             }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TSentler.Dialogs
 {
@@ -12,6 +13,7 @@ namespace TSentler.Dialogs
         public Camera Camera;
         public Phrase NextPhrase;
         public int BackgroundIndex = -1;
+        public UnityEvent OnStarted;
 
         public virtual Phrase GetNextPhrase()
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TSentler
 {
@@ -8,25 +9,25 @@ namespace TSentler
     {
         public GameObject Dialog;
 
-        private CharacterControls CharacterControls;
+        public UnityEvent Activated;
+        public UnityEvent Deactivated;
 
         private void Awake()
         {
-            CharacterControls = FindObjectOfType<CharacterControls>();
             Dialog.SetActive(false);
         }
 
         public void Activate()
         {
-            CharacterControls.DialogActivate(); //Сообщаем классу управления движением перса, о том что открывается диалоговое окно и он должен отрубить управление игроком.
             Dialog.SetActive(true); //Активация геймобъекта с канвасом диалогов
+            Activated.Invoke();
         }
 
-        public void Deactivate(bool isInputBack)
+        public void Deactivate(bool isEventNeed)
         {
-            if (isInputBack)
+            if (isEventNeed)
             {
-                CharacterControls.DialogDeactivate();
+                Deactivated.Invoke();
             }
             Dialog.SetActive(false);
         }

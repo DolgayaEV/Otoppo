@@ -44,7 +44,6 @@ public class CharacterControls : MonoBehaviour {
 		rb.useGravity = false;
 
 		checkPoint = transform.position;
-		Cursor.visible = false;
 	}
 	
 	void FixedUpdate () {

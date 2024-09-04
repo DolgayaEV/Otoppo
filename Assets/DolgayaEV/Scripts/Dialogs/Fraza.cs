@@ -14,6 +14,7 @@ namespace DolgayaEV.Dialogs
         public Camera Camera;
         public Fraza NextFraza;
         public int BackgroundIndex = -1;
+        public Sprite ImageHead;
         public UnityEvent OnStarted;
 
         public virtual Fraza GetNextFraza()

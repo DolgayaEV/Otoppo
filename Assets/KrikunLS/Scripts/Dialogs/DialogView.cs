@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace KrikunLS.Dialogs
 {
@@ -12,6 +13,7 @@ namespace KrikunLS.Dialogs
         public GameObject ButtonsPanel;
         public TMP_Text TextButtonA;
         public TMP_Text TextButtonB;
+        public Image ImageHead;
 
         private void Awake()
         {
@@ -22,6 +24,10 @@ namespace KrikunLS.Dialogs
         {
             NameText.text = fraza.Name;
             MessageText.text = fraza.Message;
+            if (fraza.ImageHead != null)
+            {
+                 ImageHead.sprite = fraza.ImageHead;
+            }
             ButtonsPanel.SetActive(false);
             if (fraza is FrazaRazvilka)
             {

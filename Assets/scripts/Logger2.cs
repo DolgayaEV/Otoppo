@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.Android;
 
 public class Logger2 : MonoBehaviour
 {

@@ -45,7 +45,7 @@ public class The3Keys : MonoBehaviour
 
                 if (KeyGreen == false)
                 {
-                    Debug.Log("зеленого ключа нет");
+                    Debug.Log("Зеленого ключа нет");
                     return false;
                 }
             }

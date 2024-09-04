@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DolgayaEV
 {
@@ -8,26 +9,25 @@ namespace DolgayaEV
     {
         public GameObject Dialog;
 
-        private CharacterControls CharacterControls;
+        public UnityEvent Activated;
+        public UnityEvent Deactivated;
 
         private void Awake()
         {
-            CharacterControls = FindObjectOfType<CharacterControls>();
             Dialog.SetActive(false); 
         }
 
         public void Activate()
         {
-            CharacterControls.DialogActivate(); //сообщаем классу управлению движени персонажа CharacterControls,
-            //о тьом что запускаеться диалоговое окно. Остановить управление персонажа
             Dialog.SetActive(true); //активируем геймобьекта Канваса Диалогов.
+            Activated.Invoke();
         }
 
-        public void Deactivate(bool isInputBack)
+        public void Deactivate(bool isEventNeed)
         {
-            if (isInputBack)
+            if (isEventNeed)
             {
-                CharacterControls.DialogDeactivate();
+                Deactivated.Invoke();
             }
             
             Dialog.SetActive(false);            

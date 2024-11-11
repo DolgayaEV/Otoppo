@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KrikunLS.Dialogs
 {
@@ -12,6 +13,8 @@ namespace KrikunLS.Dialogs
         public Camera Camera;
         public Fraza NextFraza;
         public int BackgroundIndex = -1;
+        public Sprite ImageHead;
+        public UnityEvent OnStarted;
 
         public virtual Fraza GetNextFraza()
         {

@@ -1,0 +1,680 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &283667011767694005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8945982895525863257}
+  - component: {fileID: 6004777994588093504}
+  - component: {fileID: 3625302898507847680}
+  m_Layer: 0
+  m_Name: Text1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8945982895525863257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283667011767694005}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 171725935264602796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6004777994588093504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283667011767694005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc38831648c2f0044962a916ddaf86bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoStart: 0
+  IsInputBack: 1
+  IsActiveCameraAtEnd: 0
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3870719990657661373}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7182337998716233728}
+        m_TargetAssemblyTypeName: DolgayaEV.Dialogs.Dialog, Assembly-CSharp
+        m_MethodName: StartDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &3625302898507847680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283667011767694005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Message: "\u041E\u043D \u043D\u0430\u0434\u0435\u044F\u043B\u0441\u044F, \u0447\u0442\u043E
+    \u044D\u0442\u043E \u0431\u0443\u0434\u0435\u0442 \u0444\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F
+    \u0442\u043E\u0447\u043A\u0430, \u043F\u043E\u0441\u043B\u0435 \u043A\u043E\u0442\u043E\u0440\u043E\u0439
+    \u043C\u043E\u0436\u043D\u043E \u0431\u0443\u0434\u0435\u0442 \u0441\u043F\u043E\u043A\u043E\u0439\u043D\u043E
+    \u0432\u0437\u0434\u043E\u0445\u043D\u0443\u0442\u044C. \u041E\u043A\u0430\u0437\u0430\u0432\u0448\u0438\u0441\u044C
+    \u043F\u0435\u0440\u0435\u0434 \u0434\u0432\u0435\u0440\u044C\u044E \u043A\u0430\u0431\u0438\u043D\u0435\u0442\u0430,
+    \u043E\u043D \u0443\u0432\u0438\u0434\u0435\u043B \u0442\u0430\u0431\u043B\u0438\u0447\u043A\u0443
+    \"\u041F\u0435\u0440\u0432\u0438\u0447\u043D\u0430\u044F \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437\u043D\u0430\u044F
+    \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u044F\".  "
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 0}
+  BackgroundIndex: 0
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &3870719990657661373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171725935264602796}
+  m_Layer: 0
+  m_Name: Episode3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &171725935264602796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870719990657661373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.778752, y: -1.7534071, z: -1.6113285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8945982895525863257}
+  - {fileID: 810545114890545667}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3882986011125430964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810545114890545667}
+  - component: {fileID: 7182337998716233728}
+  - component: {fileID: 6349798355822940228}
+  - component: {fileID: 5139860930583331274}
+  - component: {fileID: 7130511874669919087}
+  - component: {fileID: 4104312664166858266}
+  - component: {fileID: 2137051503091071261}
+  - component: {fileID: 8036618037061440450}
+  - component: {fileID: 95751394580779396}
+  - component: {fileID: 362079523473660745}
+  - component: {fileID: 2380162524542557408}
+  - component: {fileID: 2329696313112798308}
+  - component: {fileID: 8647139764413949297}
+  - component: {fileID: 1742576097955236831}
+  - component: {fileID: 9094318659142961145}
+  - component: {fileID: 7949305524058644199}
+  - component: {fileID: 1612988284363055862}
+  - component: {fileID: 1637820075339626360}
+  - component: {fileID: 5844161294096661884}
+  m_Layer: 0
+  m_Name: Dialog3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &810545114890545667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 171725935264602796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7182337998716233728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc38831648c2f0044962a916ddaf86bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoStart: 0
+  IsInputBack: 1
+  IsActiveCameraAtEnd: 0
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5844161294096661884}
+        m_TargetAssemblyTypeName: DolgayaEV.NekstLevelButtoms, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &6349798355822940228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435.
+    \u041C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0410\u0440\u0442\u0451\u043C,
+    \u044F \u043D\u0435\u0434\u0430\u0432\u043D\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u043B\u0441\u044F
+    \u0432 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044E. \u0420\u0430\u0434 \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F.
+    \u041C\u043D\u0435 \u043D\u0443\u0436\u043D\u043E \u043F\u043E\u0434\u043F\u0438\u0441\u0430\u0442\u044C
+    \u043E\u0431\u0445\u043E\u0434\u043D\u043E\u0439 \u043B\u0438\u0441\u0442."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 5139860930583331274}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5139860930583331274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u041F\u0440\u0435\u0434\u0441\u0435\u0434\u0430\u0442\u0435\u043B\u044C
+    \u041F\u041F\u041E"
+  Message: "\u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u0410\u0440\u0442\u0451\u043C!
+    \u0412\u0437\u0430\u0438\u043C\u043D\u043E \u0440\u0430\u0434 \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432\u0443.
+    \u041C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0412\u0438\u043A\u0442\u043E\u0440
+    \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447, \u044F \u043F\u0440\u0435\u0434\u0441\u0435\u0434\u0430\u0442\u0435\u043B\u044C
+    \u043F\u0435\u0440\u0432\u0438\u0447\u043D\u043E\u0439 \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437\u043D\u043E\u0439
+    \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u0438."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 7130511874669919087}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7130511874669919087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u042F \u0441\u043B\u044B\u0448\u0430\u043B \u043E \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437\u0435,
+    \u043D\u043E \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C \u043F\u043E\u043D\u0438\u043C\u0430\u044E,
+    \u0437\u0430\u0447\u0435\u043C \u043E\u043D \u043D\u0443\u0436\u0435\u043D. \u041C\u043E\u0436\u0435\u0442\u0435
+    \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442\u044C?"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 4104312664166858266}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4104312664166858266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u041A\u043E\u043D\u0435\u0447\u043D\u043E. \u041F\u0440\u043E\u0444\u0441\u043E\u044E\u0437
+    \u2014 \u044D\u0442\u043E \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u044F,
+    \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0437\u0430\u0449\u0438\u0449\u0430\u0435\u0442
+    \u043F\u0440\u0430\u0432\u0430 \u0438 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u044B
+    \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A\u043E\u0432. \u041C\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F
+    \u0442\u0435\u043C, \u0447\u0442\u043E \u0441\u043B\u0435\u0434\u0438\u043C \u0437\u0430
+    \u0441\u043E\u0431\u043B\u044E\u0434\u0435\u043D\u0438\u0435\u043C \u0442\u0440\u0443\u0434\u043E\u0432\u043E\u0433\u043E
+    \u0437\u0430\u043A\u043E\u043D\u043E\u0434\u0430\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430,
+    \u043F\u043E\u043C\u043E\u0433\u0430\u0435\u043C \u0440\u0435\u0448\u0430\u0442\u044C
+    \u043A\u043E\u043D\u0444\u043B\u0438\u043A\u0442\u044B \u0441 \u0440\u0430\u0431\u043E\u0442\u043E\u0434\u0430\u0442\u0435\u043B\u0435\u043C
+    \u0438 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u043C
+    \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0443 \u0432 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445
+    \u0432\u043E\u043F\u0440\u043E\u0441\u0430\u0445."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 2137051503091071261}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2137051503091071261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u0417\u0432\u0443\u0447\u0438\u0442 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E.
+    \u041D\u043E \u043A\u0430\u043A \u044D\u0442\u043E \u043C\u043E\u0436\u0435\u0442
+    \u043C\u043D\u0435 \u043F\u043E\u043C\u043E\u0447\u044C \u043D\u0430 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0435?"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 8036618037061440450}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8036618037061440450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u0435\u0441\u043B\u0438
+    \u0443 \u0442\u0435\u0431\u044F \u0432\u043E\u0437\u043D\u0438\u043A\u043D\u0443\u0442
+    \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B \u0441 \u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438
+    \u0442\u0440\u0443\u0434\u0430 \u0438\u043B\u0438 \u043E\u043F\u043B\u0430\u0442\u043E\u0439,
+    \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437 \u043C\u043E\u0436\u0435\u0442
+    \u0432\u043C\u0435\u0448\u0430\u0442\u044C\u0441\u044F \u0438 \u043F\u043E\u043C\u043E\u0447\u044C
+    \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u044C \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044E.
+    \u041C\u044B \u0442\u0430\u043A\u0436\u0435 \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F
+    \u0432\u043E\u043F\u0440\u043E\u0441\u0430\u043C\u0438 \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438
+    \u043D\u0430 \u0440\u0430\u0431\u043E\u0447\u0435\u043C \u043C\u0435\u0441\u0442\u0435
+    \u0438 \u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u0435\u043C \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435
+    \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F
+    \u0438 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 95751394580779396}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &95751394580779396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u0410 \u0435\u0441\u043B\u0438 \u0443 \u043C\u0435\u043D\u044F \u0432\u0441\u0451
+    \u0432 \u043F\u043E\u0440\u044F\u0434\u043A\u0435, \u0437\u0430\u0447\u0435\u043C
+    \u043C\u043D\u0435 \u0432\u0441\u0442\u0443\u043F\u0430\u0442\u044C \u0432 \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437?"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 362079523473660745}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &362079523473660745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u0414\u0430\u0436\u0435 \u0435\u0441\u043B\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
+    \u0432\u0441\u0451 \u0445\u043E\u0440\u043E\u0448\u043E, \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437
+    \u043C\u043E\u0436\u0435\u0442 \u0441\u0442\u0430\u0442\u044C \u0442\u0432\u043E\u0435\u0439
+    \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u043E\u0439 \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u043C.
+    \u041A \u0442\u043E\u043C\u0443 \u0436\u0435, \u043C\u044B \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0443\u0435\u043C
+    \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435 \u043C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u044F,
+    \u0433\u0434\u0435 \u0442\u044B \u043C\u043E\u0436\u0435\u0448\u044C \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F
+    \u0441 \u043A\u043E\u043B\u043B\u0435\u0433\u0430\u043C\u0438 \u0438 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+    \u043F\u043E\u043B\u0435\u0437\u043D\u044B\u0435 \u0437\u043D\u0430\u043D\u0438\u044F.
+    \u0418, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0447\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435
+    \u0443 \u043D\u0430\u0441 \u0447\u043B\u0435\u043D\u043E\u0432, \u0442\u0435\u043C
+    \u0441\u0438\u043B\u044C\u043D\u0435\u0435 \u043D\u0430\u0448 \u0433\u043E\u043B\u043E\u0441
+    \u043F\u0440\u0438 \u043F\u0435\u0440\u0435\u0433\u043E\u0432\u043E\u0440\u0430\u0445
+    \u0441 \u0440\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E\u043C."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 2380162524542557408}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2380162524542557408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0412\u0438\u043A\u0442\u043E\u0440
+    \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447. \u042F \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E
+    \u043F\u043E\u0434\u0443\u043C\u0430\u044E \u043D\u0430\u0434 \u0432\u0430\u0448\u0438\u043C
+    \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435\u043C. \u0410
+    \u043A\u0430\u043A \u0447\u0430\u0441\u0442\u043E \u043F\u0440\u043E\u0445\u043E\u0434\u044F\u0442
+    \u0432\u0441\u0442\u0440\u0435\u0447\u0438 \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437\u0430?"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 2329696313112798308}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2329696313112798308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u041E\u0431\u044B\u0447\u043D\u043E \u043C\u044B \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u043C
+    \u043E\u0431\u0449\u0438\u0435 \u0441\u043E\u0431\u0440\u0430\u043D\u0438\u044F
+    \u0440\u0430\u0437 \u0432 \u043A\u0432\u0430\u0440\u0442\u0430\u043B, \u043D\u043E
+    \u0435\u0441\u043B\u0438 \u0432\u043E\u0437\u043D\u0438\u043A\u0430\u044E\u0442
+    \u0441\u0440\u043E\u0447\u043D\u044B\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B,
+    \u043C\u043E\u0436\u0435\u043C \u0441\u043E\u0431\u0438\u0440\u0430\u0442\u044C\u0441\u044F
+    \u0438 \u0447\u0430\u0449\u0435. \u041A\u0440\u043E\u043C\u0435 \u0442\u043E\u0433\u043E,
+    \u0443 \u043D\u0430\u0441 \u0435\u0441\u0442\u044C \u0440\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u044B\u0435
+    \u0432\u0441\u0442\u0440\u0435\u0447\u0438 \u0441 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044F\u043C\u0438
+    \u0440\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u0430 \u0434\u043B\u044F
+    \u043E\u0431\u0441\u0443\u0436\u0434\u0435\u043D\u0438\u044F \u0442\u0435\u043A\u0443\u0449\u0438\u0445
+    \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 8647139764413949297}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8647139764413949297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u041F\u043E\u043D\u044F\u0442\u043D\u043E. \u0410 \u0435\u0441\u043B\u0438
+    \u0443 \u043C\u0435\u043D\u044F \u043F\u043E\u044F\u0432\u044F\u0442\u0441\u044F
+    \u043A\u0430\u043A\u0438\u0435-\u0442\u043E \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0438\u043B\u0438 \u0438\u0434\u0435\u0438, \u043A\u0430\u043A \u0438\u0445
+    \u043B\u0443\u0447\u0448\u0435 \u0434\u043E\u043D\u0435\u0441\u0442\u0438 \u0434\u043E
+    \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437\u0430?"
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 1742576097955236831}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1742576097955236831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u041C\u044B \u0432\u0441\u0435\u0433\u0434\u0430 \u043E\u0442\u043A\u0440\u044B\u0442\u044B
+    \u0434\u043B\u044F \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0439.
+    \u0422\u044B \u043C\u043E\u0436\u0435\u0448\u044C \u043F\u043E\u0434\u043E\u0439\u0442\u0438
+    \u043A\u043E \u043C\u043D\u0435 \u043B\u0438\u0447\u043D\u043E, \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C
+    \u043D\u0430 \u043D\u0430\u0448 \u043E\u0431\u0449\u0438\u0439 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u044B\u0439
+    \u0430\u0434\u0440\u0435\u0441 \u0438\u043B\u0438 \u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
+    \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435 \u0432 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u043C
+    \u044F\u0449\u0438\u043A\u0435 \u0434\u043B\u044F \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0439,
+    \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
+    \u0432 \u043E\u0444\u0438\u0441\u0435."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 9094318659142961145}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9094318659142961145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E, \u0441\u043F\u0430\u0441\u0438\u0431\u043E.
+    \u042F \u0440\u0430\u0434, \u0447\u0442\u043E \u0443 \u043D\u0430\u0441 \u0432
+    \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u0435\u0441\u0442\u044C \u0442\u0430\u043A\u0430\u044F
+    \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0430. \u042D\u0442\u043E \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+    \u0432\u0430\u0436\u043D\u043E."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 7949305524058644199}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7949305524058644199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u0420\u0430\u0434 \u0441\u043B\u044B\u0448\u0430\u0442\u044C, \u0447\u0442\u043E
+    \u0442\u044B \u0442\u0430\u043A \u0434\u0443\u043C\u0430\u0435\u0448\u044C. \u041C\u044B
+    \u0441\u0442\u0430\u0440\u0430\u0435\u043C\u0441\u044F \u0441\u0434\u0435\u043B\u0430\u0442\u044C
+    \u0432\u0441\u0451 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0435, \u0447\u0442\u043E\u0431\u044B
+    \u043D\u0430\u0448\u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u0438
+    \u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0438 \u0441\u0435\u0431\u044F
+    \u0437\u0430\u0449\u0438\u0449\u0451\u043D\u043D\u044B\u043C\u0438 \u0438 \u0443\u0432\u0435\u0440\u0435\u043D\u043D\u044B\u043C\u0438.
+    \u0415\u0441\u043B\u0438 \u0440\u0435\u0448\u0438\u0448\u044C \u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C\u0441\u044F,
+    \u0431\u0443\u0434\u0435\u043C \u0440\u0430\u0434\u044B \u0432\u0438\u0434\u0435\u0442\u044C
+    \u0442\u0435\u0431\u044F \u0432 \u043D\u0430\u0448\u0438\u0445 \u0440\u044F\u0434\u0430\u0445."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 1612988284363055862}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1612988284363055862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0410\u0440\u0442\u0451\u043C"
+  Message: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0412\u0438\u043A\u0442\u043E\u0440
+    \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447. \u042F \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E
+    \u043E\u0431\u0434\u0443\u043C\u0430\u044E \u044D\u0442\u043E \u0438, \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E,
+    \u0441\u043A\u043E\u0440\u043E \u0441\u0442\u0430\u043D\u0443 \u0447\u0430\u0441\u0442\u044C\u044E
+    \u0432\u0430\u0448\u0435\u0439 \u043A\u043E\u043C\u0430\u043D\u0434\u044B."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 1637820075339626360}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1637820075339626360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562864a3a71a3b47b7b22617f43b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0412\u0438\u043A\u0442\u043E\u0440 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+  Message: "\u0427\u0442\u043E\u0431\u044B \u0442\u0435\u0431\u0435 \u0431\u044B\u043B\u043E
+    \u043F\u0440\u043E\u0449\u0435 \u043F\u043E\u043D\u044F\u0442\u044C, \u0447\u0442\u043E
+    \u0442\u0430\u043A\u043E\u0435 \u043F\u0440\u043E\u0444\u0441\u043E\u044E\u0437
+    \u0438 \u0437\u0430\u0447\u0435\u043C \u043E\u043D \u043D\u0443\u0436\u0435\u043D,
+    \u044F \u0441\u0435\u0439\u0447\u0430\u0441 \u0432\u043A\u043B\u044E\u0447\u0443
+    \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0439 \u0432\u0438\u0434\u0435\u043E\u0440\u043E\u043B\u0438\u043A."
+  Camera: {fileID: 0}
+  NextFraza: {fileID: 0}
+  BackgroundIndex: -1
+  ImageHead: {fileID: 0}
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5844161294096661884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882986011125430964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e61f7ac27fbe414b9b971d5556bd51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: 4Profkom

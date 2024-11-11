@@ -12,6 +12,7 @@ namespace KrikunLS.Dialogs
     {
         public bool AutoStart;
         public bool IsInputBack = true;
+        public bool IsActiveCameraAtEnd;
         public UnityEvent OnStarted;
         public UnityEvent OnEnded;
 
@@ -68,12 +69,16 @@ namespace KrikunLS.Dialogs
                 _dialogView.SetFraza(_currentFraza);
                 CameraActivate();
                 _backgroundSwitcher.ActivateByIndex(_currentFraza.BackgroundIndex);
+                _currentFraza.OnStarted.Invoke();
             }
             else
             {
                 _isCurrent = false;
                 _dialogActivator.Deactivate(IsInputBack);
-                CameraDeactivate(); 
+                if (IsActiveCameraAtEnd == false) 
+                {
+                    CameraDeactivate(); 
+                }
                 _backgroundSwitcher.DeactivateAll();
                 OnEnded.Invoke();
             }

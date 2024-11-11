@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DolgayaEV.Dialogs
 {
@@ -13,6 +14,8 @@ namespace DolgayaEV.Dialogs
         public GameObject RazvilkaPanel;
         public TMP_Text RazvilkaTextA;
         public TMP_Text RazvilkaTextB;
+        public Image ImageHead;
+
 
 
         private void Awake()
@@ -25,6 +28,10 @@ namespace DolgayaEV.Dialogs
         {
             NameText.text = fraza.Name;
             MessageText.text = fraza.Message;
+            if (fraza.ImageHead != null)
+            {
+                ImageHead.sprite = fraza.ImageHead;
+            }
             RazvilkaPanel.SetActive(false);
             if (fraza is FrazaRazvilka)
             {

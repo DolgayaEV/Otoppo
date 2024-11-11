@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Logger2 : MonoBehaviour
 {
     public string Name;

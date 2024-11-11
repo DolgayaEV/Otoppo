@@ -6,24 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KrikunLS/Menu.unity
-    guid: 184fde1bc0f13ee4b89cbed3084d3241
+    path: Assets/DolgayaEV/Scene/1Menu.unity
+    guid: 2a923aaf9f8a7334992e9182001a1047
   - enabled: 1
-    path: Assets/KrikunLS/Krikun.unity
-    guid: 3d82863938603c949bf91f4ddcd0a1c1
-  - enabled: 1
-    path: Assets/KrikunLS/Autors.unity
-    guid: e1af393447d80954a802fe176379159b
-  - enabled: 1
-    path: Assets/DolgayaEV/Scene/Prolog.unity
+    path: Assets/DolgayaEV/Scene/2Prolog.unity
     guid: 5ebd5b38b1948654cb220602e09d699a
   - enabled: 1
-    path: Assets/TSentler/Menu.unity
-    guid: c71dd822eecafd54484d06293bdcfb66
+    path: Assets/DolgayaEV/Scene/3Prolog.unity
+    guid: 15811466713cef742b73be9b3689fc0b
   - enabled: 1
-    path: Assets/TSentler/TSentler.unity
-    guid: 4f63c32578ddf174397fa12191db2d3c
+    path: Assets/DolgayaEV/Scene/4Profkom.unity
+    guid: c432b940e21115441aaef61c0c29f438
   - enabled: 1
-    path: Assets/DolgayaEV/Menu.unity
-    guid: 2a923aaf9f8a7334992e9182001a1047
+    path: Assets/DolgayaEV/Scene/5OxranaNryda.unity
+    guid: 45e204dbd33196d42861ff1e3fb9e254
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/6Pazzle.unity
+    guid: 64cf5954194606240b78681a7de3fe2d
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/8OxranaT.unity
+    guid: 889959388f675cf4cb91048946807a0a
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/9Pozar.unity
+    guid: 7a9e12499589a794b86585cc7dcdfd01
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/10Travma.unity
+    guid: c5fc1991213e69d4595960ee52b879d4
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/11Boom.unity
+    guid: 81470c23f8f70e8449a92a031da63d3a
+  - enabled: 1
+    path: Assets/DolgayaEV/Scene/12Fire.unity
+    guid: aa734013631d9d34da64d8d2ad3377d5
   m_configObjects: {}

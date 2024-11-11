@@ -10539,7 +10539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &204757824
 Transform:
   m_ObjectHideFlags: 0
@@ -36125,6 +36125,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4284083341801792, guid: 84897346c76ecaa45af8b67ed3bfc9b8, type: 3}
   m_PrefabInstance: {fileID: 1655904031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &775277499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775277500}
+  - component: {fileID: 775277501}
+  m_Layer: 0
+  m_Name: Camera (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &775277500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775277499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0007967983, y: 0.9849738, z: -0.17222281, w: -0.0128588835}
+  m_LocalPosition: {x: 10.765, y: 22.736425, z: 39.438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1292575011}
+  m_LocalEulerAnglesHint: {x: 19.831, y: -178.44, z: 0.365}
+--- !u!20 &775277501
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775277499}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1001 &776963083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58840,8 +58923,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 204757824}
   - {fileID: 1394676731}
+  - {fileID: 204757824}
+  - {fileID: 775277500}
   m_Father: {fileID: 1535262275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1292575013
@@ -58890,9 +58974,9 @@ MonoBehaviour:
     \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E
     \u0438\u043B\u0438 \u043F\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u0437\u0430
     \u043F\u043E\u043C\u043E\u0449\u044C\u044E?"
-  Camera: {fileID: 204757826}
+  Camera: {fileID: 0}
   NextFraza: {fileID: 1292575013}
-  BackgroundIndex: -2
+  BackgroundIndex: -1
   ImageHead: {fileID: 0}
   OnStarted:
     m_PersistentCalls:
@@ -58979,9 +59063,9 @@ MonoBehaviour:
     \u0431\u044B\u043B\u043E \u043F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u043E
     \u0437\u0430\u0440\u044F\u0434\u043D\u043E\u0435 \u0438 \u0447\u0430\u0439\u043D\u0438\u043A,
     \u043F\u043E\u0448\u043B\u0438 \u0438\u0441\u043A\u0440\u044B."
-  Camera: {fileID: 0}
+  Camera: {fileID: 1394676732}
   NextFraza: {fileID: 1292575016}
-  BackgroundIndex: -1
+  BackgroundIndex: -2
   ImageHead: {fileID: 0}
   OnStarted:
     m_PersistentCalls:
@@ -64651,6 +64735,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4264064394419468, guid: 5f9e6d4b2005b0445b630830d867e2c8, type: 3}
   m_PrefabInstance: {fileID: 403019389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1369336740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369336741}
+  m_Layer: 0
+  m_Name: Dialog2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1369336741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369336740}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1535262275}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1369369890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4035851672463206, guid: 8d2f0f90c77c07b4cb896337a451976b, type: 3}
@@ -65512,8 +65627,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394676730}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05510027, y: 0.93247646, z: -0.16132435, w: 0.31847462}
-  m_LocalPosition: {x: 9.634996, y: 22.358961, z: 36.202034}
+  m_LocalRotation: {x: 0.17603458, y: -0.7978835, z: 0.278116, w: 0.50502014}
+  m_LocalPosition: {x: 1.0585871, y: 22.791, z: 15.8426285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71957,6 +72072,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1292575011}
+  - {fileID: 1369336741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1535441572 stripped
@@ -73185,7 +73301,7 @@ GameObject:
   - component: {fileID: 1565125187}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

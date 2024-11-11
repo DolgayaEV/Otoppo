@@ -8,12 +8,13 @@ public class CameraManager : MonoBehaviour {
 	public float mouseSpeed = 2; //Speed ​​at which we rotate the camera with the mouse
 	//public float controllerSpeed = 5; //Speed ​​at which we rotate the camera with the joystick
 	public float cameraDist = 3; //Distance to which the camera is located
+	public float hitOffset = 0.25f;
 
-	public Transform target; //Player the camera follows
+    public Transform target; //Player the camera follows
 
 	[HideInInspector]
 	public Transform pivot; //Pivot on which the camera rotates(distance that we want between the camera and our character)
-	[HideInInspector]
+	//[HideInInspector]
 	public Transform camTrans; //Camera position
 
 	float turnSmoothing = .1f; //Smooths all camera movements (Time it takes the camera to reach the rotation indicated with the joystick)
@@ -95,7 +96,7 @@ public class CameraManager : MonoBehaviour {
 			if (hit.transform.tag == "Wall")
 			{
 				// store the distance;
-				dist = hit.distance - 0.25f;
+				dist = hit.distance - hitOffset;
 			}
 		}
 		// check if the distance is greater than the max camera distance;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +28,8 @@ public class CameraManager : MonoBehaviour {
 	float smoothYvelocity;
 	public float lookAngle; //Angle the camera has on the Y axis
 	public float tiltAngle; //Angle the camera has up / down
+
+	private bool isDialog;
 
 	public void Init()
 	{
@@ -64,7 +67,11 @@ public class CameraManager : MonoBehaviour {
 	}
 
 	private void FixedUpdate()
-	{//Function that correctly rotates the camera based on the joystick / mouse and follows the player (the delta time is sent to be independent of the fps)
+	{
+		if (isDialog)
+			return;
+		
+		//Function that correctly rotates the camera based on the joystick / mouse and follows the player (the delta time is sent to be independent of the fps)
 		float h = Input.GetAxis("Mouse X");
 		float v = Input.GetAxis("Mouse Y");
 
@@ -88,21 +95,27 @@ public class CameraManager : MonoBehaviour {
 	{
 		//Here begins the code that is responsible for bringing the camera closer by detecting wall
 		float dist = cameraDist + 1.0f; // distance to the camera + 1.0 so the camera doesnt jump 1 unit in if it hits someting far out
-		Ray ray = new Ray(camTrans.parent.position, camTrans.position - camTrans.parent.position);// get a ray in space from the target to the camera.
+		Vector3 dir = camTrans.position - camTrans.parent.position;
+        Ray ray = new Ray(camTrans.parent.position, dir);// get a ray in space from the target to the camera.
 		RaycastHit hit;
-		// read from the taret to the targetPosition;
-		if (Physics.Raycast(ray, out hit, dist))
+        // read from the taret to the targetPosition;
+
+        if (Physics.Raycast(ray, out hit, dist))
 		{
+			//Debug.Log(hit.transform.gameObject.name);
 			if (hit.transform.tag == "Wall")
 			{
 				// store the distance;
 				dist = hit.distance - hitOffset;
+				//Debug.Log(dist);
 			}
 		}
 		// check if the distance is greater than the max camera distance;
 		if (dist > cameraDist) dist = cameraDist;
 		camTrans.localPosition = new Vector3(0, 0, -dist);
 	}
+
+
 
 	public static CameraManager singleton; //You can call CameraManager.singleton from other script (There can be only one)
 	void Awake()
@@ -111,4 +124,24 @@ public class CameraManager : MonoBehaviour {
 		Init();
 	}
 
+
+
+    private void OnDrawGizmos()
+    {
+		/*
+		Vector3 dir = camTrans.position - camTrans.parent.position;
+		float dist = cameraDist + 1.0f;	
+		Debug.DrawLine(camTrans.parent.position, camTrans.parent.position + dir.normalized * dist);
+		*/
+    }
+
+    public void DialogActivate()
+    {
+		isDialog = true;
+    }
+
+    public void DialogDeactivate()
+    {
+		isDialog = false;
+    }
 }

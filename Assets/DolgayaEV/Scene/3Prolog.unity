@@ -53500,6 +53500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596084021}
   - component: {fileID: 1605772851}
+  - component: {fileID: 1605772852}
   m_Layer: 0
   m_Name: Character_Profkom
   m_TagString: Untagged
@@ -54237,6 +54238,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1605772852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596361901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee93bd58109621845b7094b5cd3913e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: 0.718
 --- !u!4 &1606359155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400190, guid: 3001a50c3a1f62d46853003e7414f22c, type: 3}

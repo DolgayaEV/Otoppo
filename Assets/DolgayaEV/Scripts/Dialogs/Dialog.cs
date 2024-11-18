@@ -70,6 +70,7 @@ namespace DolgayaEV.Dialogs
 
             if (_currentFraza != null)
             {
+                _currentFraza.Log();
                 _dialogviey.SetFraza(_currentFraza);
                 CameraActivate();
                 _beckgraunPereklychi.ActivateByIndex(_currentFraza.BackgroundIndex);
